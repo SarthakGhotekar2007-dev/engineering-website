@@ -1,0 +1,57 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--orange-accent);
+  transform-origin: 0%;
+  z-index: 9999;
+}
+
+main {
+  flex: 1;
+}
+
+/* Sticky Mobile Bar */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--industrial-dark);
+  border-top: 1px solid rgba(255, 90, 0, 0.3);
+  z-index: 100;
+  padding: 10px 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-sticky-bar .sticky-btn {
+  flex: 1;
+  text-align: center;
+  color: var(--metallic-grey);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-sticky-bar .sticky-btn:hover {
+  color: var(--orange-accent);
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-bar {
+    display: flex;
+    justify-content: space-around;
+  }
+}

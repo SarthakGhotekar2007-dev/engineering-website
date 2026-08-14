@@ -1,0 +1,132 @@
+.projects-section {
+  position: relative;
+}
+
+.projects-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  margin-top: 50px;
+}
+
+.project-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.project-item.align-left {
+  justify-content: flex-start;
+}
+
+.project-item.align-right {
+  justify-content: flex-end;
+}
+
+.project-image-wrapper {
+  width: 80%;
+  height: 700px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(40%) contrast(1.1);
+  transition: transform 10s ease;
+}
+
+.project-image-wrapper:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(18, 21, 24, 0.95);
+  padding: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.project-item.align-left .project-info {
+  right: 5%;
+}
+
+.project-item.align-right .project-info {
+  left: 5%;
+}
+
+.project-info h3 {
+  font-size: 4rem;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.project-info p {
+  color: var(--orange-accent);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .project-image-wrapper {
+    height: 500px;
+  }
+  .project-info h3 {
+    font-size: 3rem;
+  }
+  .project-info {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-gallery {
+    gap: 80px;
+  }
+  .project-item {
+    flex-direction: column;
+  }
+  .project-item.align-left, .project-item.align-right {
+    justify-content: center;
+  }
+  .project-image-wrapper {
+    width: 100%;
+    height: 400px;
+  }
+  .project-info {
+    position: relative;
+    top: 0;
+    transform: translateY(-50%);
+    width: 90%;
+    margin: 0 auto;
+  }
+  .project-item.align-left .project-info,
+  .project-item.align-right .project-info {
+    right: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-info {
+    padding: 25px;
+    width: 95%;
+  }
+  .project-info h3 {
+    font-size: 2rem;
+  }
+  .project-image-wrapper {
+    height: 300px;
+  }
+}

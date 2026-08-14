@@ -1,0 +1,206 @@
+.premium-cta-section {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--deep-black);
+  border-top: 1px solid rgba(255, 90, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 90, 0, 0.1);
+}
+
+/* Background Effects */
+.cta-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cta-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center center;
+  opacity: 0.5;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+
+.cta-glow-1 {
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 90, 0, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.cta-glow-2 {
+  position: absolute;
+  bottom: -20%;
+  right: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 90, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Content */
+.relative { position: relative; }
+.z-10 { z-index: 10; }
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.cta-accent-line {
+  width: 60px;
+  height: 4px;
+  background: var(--orange-accent);
+  margin-bottom: 30px;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(255, 90, 0, 0.5);
+}
+
+.cta-massive-title {
+  font-size: 5.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.text-orange-gradient {
+  background: linear-gradient(135deg, #FF5A00 0%, #FF8A00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: var(--metallic-grey);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Actions */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.cta-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 45px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.primary-cta-btn {
+  background: linear-gradient(135deg, var(--orange-accent) 0%, #e04a00 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 20px rgba(255, 90, 0, 0.2);
+}
+
+.primary-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.primary-cta-btn:hover::before {
+  left: 100%;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.primary-cta-btn:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .cta-massive-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-massive-title {
+    font-size: 3.5rem;
+  }
+  .cta-actions {
+    flex-direction: column;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .cta-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-massive-title {
+    font-size: 2.8rem;
+  }
+  .cta-subtitle {
+    font-size: 1.1rem;
+  }
+}

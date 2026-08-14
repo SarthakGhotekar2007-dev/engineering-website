@@ -1,0 +1,110 @@
+.experience-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.experience-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url('/08_workshop_interior.png') center/cover no-repeat;
+  opacity: 0.1;
+  mask-image: linear-gradient(to right, transparent, black);
+  -webkit-mask-image: linear-gradient(to right, transparent, black);
+  z-index: 0;
+}
+
+.experience-container {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.experience-number {
+  font-size: 16rem;
+  line-height: 0.8;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--orange-accent);
+  letter-spacing: -5px;
+  text-shadow: 0 0 40px rgba(255, 90, 0, 0.2);
+}
+
+.experience-number .plus {
+  font-size: 10rem;
+  vertical-align: top;
+  color: #fff;
+}
+
+.experience-text {
+  max-width: 500px;
+}
+
+.experience-text h2 {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.experience-details p {
+  color: var(--metallic-grey);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.experience-details p::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--orange-accent);
+}
+
+@media (max-width: 1200px) {
+  .experience-number {
+    font-size: 12rem;
+  }
+  .experience-number .plus {
+    font-size: 8rem;
+  }
+  .experience-text h2 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .experience-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .experience-bg {
+    width: 100%;
+    mask-image: linear-gradient(to top, transparent, black);
+    -webkit-mask-image: linear-gradient(to top, transparent, black);
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-number {
+    font-size: 8rem;
+  }
+  .experience-number .plus {
+    font-size: 5rem;
+  }
+  .experience-text h2 {
+    font-size: 2.2rem;
+  }
+}

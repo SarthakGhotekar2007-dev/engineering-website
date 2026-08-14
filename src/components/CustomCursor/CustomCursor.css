@@ -1,0 +1,55 @@
+@media (pointer: fine) {
+  /* Enforce no cursor globally across ALL elements to fix double cursor issue */
+  *, *::before, *::after, body, a, button, .interactive, input, textarea, select, [style*="cursor: pointer"] {
+    cursor: none !important;
+  }
+}
+
+.cursor-gear-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, scale, opacity;
+}
+
+.gear-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity, scale;
+}
+
+/* Wrench should overlap perfectly */
+.wrench-wrapper {
+  transform-origin: center;
+}
+
+.cursor-gear-icon {
+  color: var(--orange-accent, #ff5a00);
+  /* Hot metal glow */
+  filter: drop-shadow(0 0 4px rgba(255, 90, 0, 0.6)) drop-shadow(0 0 12px rgba(255, 90, 0, 0.4));
+}
+
+/* Specifically style the wrench if needed */
+.wrench-icon {
+  color: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+.gear-center-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px white;
+  z-index: 2;
+}

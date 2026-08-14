@@ -1,0 +1,299 @@
+.machinery-section {
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.machinery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.machine-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.machine-image {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background: var(--deep-black);
+}
+
+.machine-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+  filter: grayscale(80%);
+}
+
+.machine-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 13, 15, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.machine-card:hover .machine-image img {
+  transform: scale(1.05);
+  filter: grayscale(20%);
+}
+
+.machine-card:hover .machine-overlay {
+  background: rgba(11, 13, 15, 0.1);
+}
+
+.machine-info {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.machine-info h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  transition: var(--transition-smooth);
+}
+
+.machine-info p {
+  color: var(--metallic-grey);
+  font-size: 1.1rem;
+}
+
+.machine-card:hover .machine-info h3 {
+  color: var(--orange-accent);
+}
+
+.interactive-3d-machinery {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  background: rgba(18, 21, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.machinery-3d-header {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.machinery-3d-header h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.machinery-3d-header p {
+  color: var(--orange-accent);
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.machinery-3d-canvas-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  cursor: grab;
+}
+
+.machinery-3d-canvas-container:active {
+  cursor: grabbing;
+}
+
+.machinery-3d-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  pointer-events: none;
+}
+
+.machinery-3d-controls span {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--metallic-grey);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hotspot-dot {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 90, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hotspot-dot:hover {
+  transform: scale(1.2);
+  z-index: 100;
+}
+
+.hotspot-inner {
+  width: 8px;
+  height: 8px;
+  background: #FF5A00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #FF5A00;
+}
+
+.opacity-0 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tooltip-3d {
+  background: rgba(18, 21, 24, 0.9);
+  border: 1px solid var(--orange-accent);
+  padding: 15px;
+  border-radius: 4px;
+  pointer-events: none;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.tooltip-3d strong {
+  display: block;
+  color: var(--orange-accent);
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.tooltip-3d p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+  .machinery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .machinery-grid {
+    grid-template-columns: 1fr;
+  }
+  .machine-image {
+    height: 250px;
+  }
+  .machine-info h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Technical Scan Line */
+.technical-scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--orange-accent);
+  box-shadow: 0 0 10px var(--orange-accent), 0 0 20px var(--orange-accent);
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* System Analysis Panel */
+.system-analysis-panel {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: rgba(18, 21, 24, 0.8);
+  border: 1px solid var(--orange-accent);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+.sap-header {
+  color: var(--orange-accent);
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 90, 0, 0.3);
+  padding-bottom: 10px;
+}
+
+.system-analysis-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.system-analysis-panel li {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sap-check {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* Exploded View Toggle */
+.exploded-view-toggle {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  z-index: 100;
+}
+
+.btn-explode {
+  background: transparent;
+  border: 1px solid var(--orange-accent);
+  color: var(--orange-accent);
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.btn-explode:hover {
+  background: rgba(255, 90, 0, 0.1);
+}
+
+.btn-explode.active {
+  background: var(--orange-accent);
+  color: #000;
+  font-weight: bold;
+}

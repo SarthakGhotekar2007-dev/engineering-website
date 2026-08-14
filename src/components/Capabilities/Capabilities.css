@@ -1,0 +1,129 @@
+.capabilities-grid-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -200px; /* Overlap with hero section */
+  margin-bottom: 100px;
+}
+
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.cap-card {
+  background: var(--gunmetal);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.cap-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 90, 0, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.cap-image-wrapper {
+  position: relative;
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cap-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+  filter: grayscale(40%);
+}
+
+.cap-card:hover .cap-image-wrapper img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.cap-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--gunmetal) 0%, transparent 100%);
+}
+
+.cap-number {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--orange-accent);
+  z-index: 2;
+}
+
+.cap-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cap-title {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  white-space: pre-line; /* Respects \n from the data */
+}
+
+.cap-desc {
+  font-size: 0.85rem;
+  color: var(--metallic-grey);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.cap-arrow {
+  color: var(--orange-accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.cap-card:hover .cap-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 1600px) {
+  .cap-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .capabilities-grid-section {
+    margin-top: -150px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .capabilities-grid-section {
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cap-grid {
+    grid-template-columns: 1fr;
+  }
+}
