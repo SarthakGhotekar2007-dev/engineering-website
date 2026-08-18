@@ -13,6 +13,7 @@ import MapMarker3D from '../components/3D/MapMarker3D';
 import TiltCard from '../components/TiltCard/TiltCard';
 const FloatingShaft3D = React.lazy(() => import('../components/3D/FloatingShaft3D'));
 const FloatingGear3D = React.lazy(() => import('../components/3D/FloatingGear3D'));
+import SEO from '../components/SEO/SEO';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -97,6 +98,10 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page bg-black">
+      <SEO 
+        title="Contact Us - Sai Krupa Engineering Works" 
+        description="Contact Sai Krupa Engineering Works in Sinnar MIDC for your machining, welding, and industrial fabrication requirements. Request a quote today."
+      />
 
       {/* 1. Hero Section */}
       <section className="contact-hero">

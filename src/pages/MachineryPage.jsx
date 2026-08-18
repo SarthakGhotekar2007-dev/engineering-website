@@ -4,6 +4,7 @@ import { Calendar, MapPin, Users, Settings, Wrench, SearchCode, PenTool, Flame, 
 import AnimatedSection from '../components/AnimatedSection/AnimatedSection';
 import SceneWrapper from '../components/3D/SceneWrapper';
 const Machinery3DModel = React.lazy(() => import('../components/3D/Machinery3DModel'));
+import SEO from '../components/SEO/SEO';
 import './MachineryPage.css';
 
 const MachineryPage = () => {
@@ -62,7 +63,10 @@ const MachineryPage = () => {
 
   return (
     <div className="machinery-page bg-black">
-
+      <SEO 
+        title="Our Machinery - Sai Krupa Engineering Works" 
+        description="Discover our state-of-the-art machinery and equipment used for precision engineering, turning, threading, and custom part manufacturing."
+      />
       {/* 1. Machinery Hero Section */}
       <section className="mach-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="mach-hero-bg"></div>

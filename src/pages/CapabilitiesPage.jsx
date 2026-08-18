@@ -3,6 +3,7 @@ import { Settings, Calendar, Briefcase, Shield, CheckCircle2, Clock, MapPin, Sea
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection/AnimatedSection';
 import TiltCard from '../components/TiltCard/TiltCard';
+import SEO from '../components/SEO/SEO';
 import './CapabilitiesPage.css';
 
 const CapabilitiesPage = () => {
@@ -96,6 +97,10 @@ const CapabilitiesPage = () => {
 
   return (
     <div className="capabilities-page bg-black">
+      <SEO 
+        title="Our Capabilities - Sai Krupa Engineering Works" 
+        description="Explore our wide range of engineering capabilities including custom machining, mass production, and specialized industrial solutions."
+      />
       
       {/* 1. Capabilities Hero Section */}
       <section className="cap-hero">

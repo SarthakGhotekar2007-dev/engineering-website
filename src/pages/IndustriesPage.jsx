@@ -9,6 +9,7 @@ import AnimatedSection from '../components/AnimatedSection/AnimatedSection';
 import TiltCard from '../components/TiltCard/TiltCard';
 import SceneWrapper from '../components/3D/SceneWrapper';
 const WeldingParticles3D = React.lazy(() => import('../components/3D/WeldingParticles3D'));
+import SEO from '../components/SEO/SEO';
 import './IndustriesPage.css';
 
 const IndustriesPage = () => {
@@ -100,6 +101,10 @@ const IndustriesPage = () => {
 
   return (
     <div className="industries-page bg-black">
+      <SEO 
+        title="Industries We Serve - Sai Krupa Engineering Works" 
+        description="We provide machining, welding, drilling, and fabrication services for manufacturing, automotive, agricultural, and general engineering industries."
+      />
 
       {/* 1. Industries Hero Section */}
       <section className="ind-hero">

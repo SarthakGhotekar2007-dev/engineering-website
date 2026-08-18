@@ -3,6 +3,7 @@ import { Settings, Calendar, Briefcase, Shield, Target, Users, Settings2, Phone,
 import AnimatedSection from '../components/AnimatedSection/AnimatedSection';
 import SceneWrapper from '../components/3D/SceneWrapper';
 const FloatingShaft3D = React.lazy(() => import('../components/3D/FloatingShaft3D'));
+import SEO from '../components/SEO/SEO';
 import './About.css';
 
 const About = () => {
@@ -12,6 +13,10 @@ const About = () => {
 
   return (
     <div className="about-page bg-black">
+      <SEO 
+        title="About Us - Sai Krupa Engineering Works" 
+        description="Learn about Sai Krupa Engineering Works, our history, mission, and the team behind our precision engineering services in Sinnar MIDC."
+      />
       {/* 1. About Hero Section */}
       <section className="about-hero">
         <div className="about-hero-bg"></div>
